@@ -1,0 +1,42 @@
+create folder
+
+When we build dapp we create two repo
+1 for smart contract 
+2 for front end[]
+
+full stack = front end+ smart contract
+
+When we access window object from console in our browser
+Generally it does not contain the ethereum 
+But once we install metamast our window module give us some output when we use window.ethereum
+or window.solana
+
+in sources the metamask option also added automatically if our browser have metamast
+=================================================
+HTML SETUP:- 
+create index.html 
+and import boilerplate by !
+
+setup the script
+https://docs.metamask.io/guide/ethereum-provider.html#table-of-contents
+
+Connecting html to metamast
+  if(window.ethereum!==undefined){
+            console.log("META MASK IS PRESENT");
+}
+to check meta mask is present or not
+  window.ethereum.request({method: "eth_requestAccounts"});
+We use below line to connect to metamask account
+
+<button id="connectButton" onclick="connect()">Connect</button>
+use above button to run connect function.
+
+   document.getElementById("connectButton").innerHTML= "Connected";
+ document.getElementById("connectButton").innerHTML= "Please install metamsk";
+
+ use both button to chenge the text of the connect button.
+
+ push {
+    1fs
+ }
+==================================================
