@@ -40,3 +40,20 @@ use above button to run connect function.
     1fs
  }
 ==================================================
+// in nodejs we require
+//but for javascript we  imprt
+
+ES6 JS V/S Node
+
+we cannot able to use require keyword inside into ES6
+so we use this code 
+import { ethers } from "https://cdn.ethers.io/lib/ethers-5.2.esm.min.js"; code in your js file
+
+we create ethers-5.6.esm.js and copy above code in that file.
+and them import it inside index.js
+
+and then change js src file linke type from text/javascript to module
+
+push{
+   2fs
+}
