@@ -105,3 +105,12 @@ reset you account from setting
 push {
    3fs
 }
+===================================
+Now we add form to give option to user to fund the contract as much as amout they want
+
+
+push{
+   finalpush
+}
+
+🙏🙏THANKYOU 🙏🙏

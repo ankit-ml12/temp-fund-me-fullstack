@@ -6,8 +6,12 @@ import {abi, contractAddress} from './constant.js'
 
 const connectButton = document.getElementById("connectButton");
 const fundButton = document.getElementById("fundButton");
+const balanceButton = document.getElementById("balanceButton");
+const withdrawButton = document.getElementById("withdrawButton");
 connectButton.onclick =connect
-fundButton.onclick  =fund
+fundButton.onclick  = fund
+balanceButton.onclick = getBalance
+withdrawButton.onclick = withdraw
 
 
 async function connect(){ 
@@ -23,7 +27,7 @@ async function connect(){
 
 
 async function fund(){
-    const ethAmount="1"
+    const ethAmount= document.getElementById("ethAmount").value
     console.log(`funding with ${ethAmount}...`);
 
     if(typeof window.ethereum != "undefined"){
@@ -45,6 +49,14 @@ async function fund(){
     }
 }
 
+async function getBalance(){
+    if(typeof window.ethereum != "undefined"){
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+       const balance = await provider.getBalance(contractAddress);
+       console.log(ethers.utils.formatEther(balance));
+    } 
+} 
+
 function listenForTransectionMine(transectionResponse, provider){
 
     console.log(`mining ${transectionResponse.hash}...`);
@@ -55,6 +67,18 @@ function listenForTransectionMine(transectionResponse, provider){
             resolve();
         })
     })
-    
-
+}
+async function withdraw(){
+    if(typeof window.ethereum != "undefined"){
+        console.log("withdrawing.....");
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+       const signer = await provider.getSigner();
+       const contract = new ethers.Contract(contractAddress, abi, signer);
+       try {
+        const transectionResponse = await contract.withdraw()
+        await listenForTransectionMine(transectionResponse, provider);
+       } catch (error) {
+        console.log(error);
+       }
+    } 
 }
