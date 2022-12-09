@@ -53,7 +53,55 @@ we create ethers-5.6.esm.js and copy above code in that file.
 and them import it inside index.js
 
 and then change js src file linke type from text/javascript to module
+which means we are allowing to import module inside our index.js
 
 push{
    2fs
+}
+
+===========================================================
+Sending a transection from website:- 
+
+web3 provider is similar to jsonrpc provider
+we create contstants.js folder to store some contstant thing
+
+we need to take our contract material from the last contract 
+ans put insidethis costant .js foldre :- 
+
+now take abi from last contract and past inside constant.js
+
+then import ininto index.js
+
+run yarn hardhat node in your fundme contract
+get contract address and put it inside the constant js and then import ininto index.js
+create new localhost network in your metamast and connect with that account
+
+
+run yarn hatdhat node in the last contract harhhat fund me.
+abouve contract address come from there
+================================================
+now we need to setup our account for localhost hardhat in metamask we can not use testnet.
+
+Network name
+hardhat-localhost
+New RPC URL
+http://127.0.0.1:8545/
+Chain ID
+31337
+Currency symbol
+ETH
+==========================
+AFTER THAT WE not have fund so we import one of the account into meta mask from our node network
+
+you can also able to import using json file 
+now use import methode into your metamask. but we do using secret key
+
+=======================================
+if you found error related 2 nounce and 4 nounce
+reset you account from setting
+
+==================================================
+
+push {
+   3fs
 }
