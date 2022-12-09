@@ -109,8 +109,9 @@ push {
 Now we add form to give option to user to fund the contract as much as amout they want
 
 
+develop get balance, withdraw function and try
 push{
-   finalpush
+   4fs
 }
 
-🙏🙏THANKYOU 🙏🙏
+THANKYOU 
